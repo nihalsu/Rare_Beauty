@@ -15,7 +15,9 @@ Rare Beauty is a cosmetics e-commerce website offering category-based product li
 
 ![Hakkimizda](Selena/About1.png)
 
+
 ![Hakkimizda](Selena/About2.png)
+
 
 ![Hakkimizda](Selena/About3.png)
 
@@ -31,7 +33,9 @@ Rare Beauty is a cosmetics e-commerce website offering category-based product li
 
 ![Detay](Selena/Detay1.png)
 
+
 ![Detay](Selena/Detay2.png)
+
 
 ![Detay](Selena/Detay3.png)
 
@@ -51,4 +55,4 @@ Rare Beauty is a cosmetics e-commerce website offering category-based product li
 
 8-)Sign in sayfası :
 
-![Signin](Selena/Sİgnin.png)
+![Signin](Selena/Signin.png)
