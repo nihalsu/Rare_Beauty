@@ -1,0 +1,241 @@
+/*lazım*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2E6E6;
+    color: #7f6d75;
+    text-align: center;
+}
+
+header {
+    background-color: #efe2e2;
+}
+
+header nav {
+    background-color: #dac9c9;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #7f6d75;
+    margin: 0 10px;
+}
+
+nav ul li a:hover {
+    color: #b8b8b8;
+}
+
+.hero {
+    padding: 100px 20px;
+    background-image: url("Selena/selena-gomez-rare-beauty-skincare-soins-soin-corps.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 110vh;
+    color: #f7f7f7;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 70px;
+    margin-bottom: 2px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product-item {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product-item h2 {
+    font-size: 20px;
+    color: #7f6d75;
+    margin-top: 10px;
+}
+
+.product-item p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+}
+
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.add-to-bag {
+    padding: 10px;
+    background-color: #dac9c9;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.add-to-bag:hover {
+    background-color: #c3a8a8;
+}
+
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+/* shop kısmı categorysi */
+/* Kategori menüsünü yatay olarak sıralamak için flexbox kullanıyoruz */
+
+.category-menu {
+    display:none;
+    flex-direction:row;
+    gap: 50px;
+    justify-content: space-evenly;      /* Öğeler arasına eşit boşluk bırak */
+    align-items: center;               /* Öğeleri dikeyde ortala */
+    padding: 10px ;    
+    position: relative;               /* Menünün üst ve alt boşluklarını ayarla */
+    background-color: #f0f0f0;         /* Menünün arka plan rengini belirle */
+    overflow-x: auto;      /* Yatay kaydırmayı etkinleştir */
+    overflow-y: hidden;    /* Dikey kaydırmayı gizle */
+    white-space: nowrap;
+    
+}
+.category-menu.active {
+    display: flex;
+}
+
+/* Her bir kategori öğesini biçimlendirme */
+.nav-category {              /* Resimleri ve metinleri ortala */
+    flex: 1;                           /* Her bir öğe eşit genişlikte olsun */
+    max-width:150px;                  /* Her bir öğenin maksimum genişliğini belirle */
+    cursor: pointer;                  /* Fare ile üzerine gelindiğinde imleci değiştir */
+    transition: transform 0.3s ease;   /* Hover efektinde animasyon ekle */
+    
+
+}
+
+/* Resimler için stil */
+.nav-category img {
+    width: 120px;                       /* Resmin genişliğini ayarla */
+    height: 120px;                      /* Resmin yüksekliğini ayarla */
+    object-fit: cover;                 /* Resmin oranını bozmadan alanı doldur */
+    border-radius: 50%;                /* Resimleri yuvarlak hale getir */
+    margin-bottom: 8px;                /* Resim ile başlık arasına boşluk ekle */
+    transition: transform 0.3s;
+}
+
+/* Başlıklar için stil */
+.nav-category h2 {
+    text-align:center;
+    font-size: 14px;                   /* Başlık yazısının boyutunu ayarla */
+    color: #333;                       /* Yazı rengini ayarla */
+    margin: 0;                         /* Başlık çevresindeki varsayılan boşluğu kaldır */
+}
+
+/* Hover efekti ekleyerek kategorilerin üzerine gelindiğinde efekt ver */
+.nav-category:hover {
+    transform: scale(1.1);             /* Öğeyi biraz büyüt */
+    transition: transform 0.3s ease;   /* Animasyon geçiş süresi */
+}
+
+/* Responsive düzen için, mobilde öğeleri alt alta yerleştir */
+@media (max-width: 250px) {
+    .category-menu {
+        flex-direction: column;        /* Ekran küçüldüğünde öğeleri dikey sıralamak */
+        align-items: flex-start;       /* Öğeleri sola hizala */
+    }
+
+    .nav-category {
+        width: 100%;                   /* Her öğe ekranın tamamını kapsasın */
+        margin-bottom: 20px;           /* Öğeler arasına boşluk ekle */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,287 @@
+/*lazım*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2E6E6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #7f6d75;
+}
+header {
+    background-color: #efe2e2;
+}
+header nav {
+    background-color: #dac9c9;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+.nav-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #7f6d75;
+    margin: 0 10px;
+}
+
+/* Hero Bölümü */
+.hero {
+    background-color: #fdf4f0;
+    width: 100%; /* Tam genişlik. */
+    min-height: 100vh; /* Tüm ekran yüksekliği. */
+    text-align: center;
+    padding: 50px 20px;
+
+}
+
+.hero h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    opacity: 0.8;
+    font-size: 48px;
+    color:#493c42;
+    float: right;
+    margin-right:20%;
+    margin-top: 150px;
+    animation: fadeIn 4s ease-in-out;
+
+}
+
+.hero p {
+    font-family:cursive;
+    max-width: 600px;
+    font-size: 18px;
+    color: #221c1f;
+    opacity: 0.8;
+    float: right;
+    margin-right: 60px; /* Metinle arasına boşluk ekler */
+    margin-top: 20px;
+    animation: fadeIn 4s ease-in-out;
+}
+.hero-image {
+    width: 420px; /* Resmin genişliği */
+    height: 420px; /* Resmin yüksekliği */
+    border-radius: 2%;
+    object-fit: cover; /* Resmin içerik oranını bozmadan sığmasını sağlar */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* X, Y, Bulanıklık, Renk */
+    float: left; /* Resmi sola hizalar */
+    margin-right: 30px; /* Metinle arasına boşluk ekler */
+    margin-top: 25px;
+    margin-bottom: 30px; /* Altında boşluk bırakır */
+
+}
+
+
+
+/* Values Bölümü */
+.values {
+    display: flex; /* Flex düzeni kullanarak elemanları yerleştir */
+    justify-content: space-between; /* Elemanları yatayda sola ve sağa yerleştirir */
+    align-items: flex-start; /* Elemanları dikeyde üstte hizalar */
+    gap: 20px; /* Elemanlar arasında boşluk bırakır */
+    padding: 60px 40px;
+}
+
+.values .content {
+    display: flex;
+    flex-direction: column; /* Başlık ve yazıyı dikey sıraya yerleştirir */
+    align-items: flex-start; /* İçeriği sola hizalar */
+    max-width: 500px; /* İçeriğin genişliğini sınırlar */
+}
+
+.values h1 {
+    color: #493c42;
+    text-shadow: 2px 2px 4px #221c1f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    opacity: 0.8;
+    text-align: left; /* Başlık sola hizalanır */
+    max-width: 300px;
+    margin-left: 60px;
+    margin-top: 140px;
+}
+
+.values h2 {
+    color: #493c42;
+    text-shadow: 2px 2px 4px #221c1f;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    opacity: 0.8;
+    text-align: left;
+    margin-left: 60px;
+    max-width: 300px;
+}
+
+.values p {
+    font-family:cursive;
+    font-size: 18px;
+    color: #221c1f;
+    opacity: 0.6;
+    text-align: left;
+    max-width: 600px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.values img {
+    width: 550px; /* Resmin genişliği */
+    height: 550px; /* Resmin yüksekliği */
+    object-fit: cover; /* Resmin oranını bozmadan sığmasını sağlar */
+    border-radius: 100%; /* Resmi daire yapar */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+    margin-right: 60px;
+}
+
+
+
+
+/* Founder Bölümü */
+
+.founder {
+    background-image: url('Selena/susan-g-komen-3-day-5S1S3MtQVyQ-unsplash.jpg'); /* Arka plan resmi */
+    background-size:cover; /* Resmi tamamen kaplar */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat; /* Resmin tekrar etmesini engeller */
+    width: 100%; /* Bölüm genişliği */
+    height: 500px; /* Bölüm yüksekliği, içeriğe göre ayarlanabilir */
+    display: flex; /* İçeriği yerleştirmek için flex kullanılır */
+    justify-content: center; /* İçeriği yatayda ortalar */
+    align-items: center; /* İçeriği dikeyde ortalar */
+    color: white; /* Yazılar için beyaz renk */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Yazılara gölge efekti */
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.founder h2 {
+    font-size: 28px;
+    color: #b070b7;
+}
+.founder p {
+    font-family: cursive;
+    font-size: large;
+
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* About sections */
+.about .hero,
+.about .values,
+.about .founder {
+    margin-bottom: 40px;
+}
+section {
+    margin-bottom: 40px;
+}
+
+
+/* Flex düzeni ile dikey hizalama */
+.values, .founder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Aralığı ayarlar */
+}
+
+.value-item, .founder > div {
+    flex: 1;
+    min-width: 300px; /* Küçülme olduğunda min boyut */
+}
+
+.value-item img, .founder-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Küçük ekranlar için (768px ve altı) */
+@media (max-width: 768px) {
+    /* Hero bölümü başlık ve paragraf */
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    /* Menü linklerinin boşluk ayarı */
+    nav ul {
+        gap: 10px;
+    }
+
+    /* Kategori kartları */
+    .category {
+        min-width: 80%; /* Tek sütun görünüm için genişletildi */
+        height: 300px; /* Daha kısa kart yüksekliği */
+        padding: 10px;
+    }
+
+    /* Kategori resimleri */
+    .category img {
+        height: 70%; /* Resmin yüksekliğini küçülttük */
+    }
+
+    /* Kategori başlıkları */
+    .category h3 {
+        font-size: 24px;
+    }
+
+    /* Kaydırma butonları */
+    .slider-button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Beauty/Signup</title>
+    <link rel="stylesheet" href="stylelogin.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-links">
+                <a href="#" class="nav-link" onclick="toggleCategoryMenu(event)">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="main.html" class="nav-link">Main</a>
+            </div>
+            <h1>Rare Beauty</h1>
+            <div class="right-links">
+                <a href="login.html" class="nav-link" id="username">Account</a>
+            </div>
+        </nav>
+    </header>
+    <script src="scriptshop.js"></script>
+    <div id="categoryMenu" class="category-menu">
+        <div class="nav-category" onclick="loadCategory('new')">
+            <img src="Selena\1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
+            <h2>New</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('bestsellers')">
+            <img src="Selena\dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
+            <h2>Bestsellers</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('face')">
+            <img src="Selena\d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
+            <h2>Face</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('eye')">
+            <img src="Selena\0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
+            <h2>Eye</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('body')">
+            <img src="Selena\9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
+            <h2>Body</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('lip')">
+            <img src="Selena\295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
+            <h2>Lip</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('set')">
+            <img src="Selena\c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
+            <h2>Sets</h2>
+        </div>
+    </div>
+    
+
+    <main>
+        <div class="container">
+            <div class="left-section">
+                <img src="Selena\8aa9f0be2633ace3ac8626cd50da5847.jpg" alt="Rare Beauty Image">
+            </div>
+            <div class="right-section">
+                <h2>Create Account</h2>
+                <form onsubmit="signup(event)">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">REGISTER</button>
+                    <div class="links">
+                        <a href="login.html">Already have an account? Sign in!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="scriptlogin.js"></script>
+    <footer>
+        <p>&copy; 2024 Rare Beauty.</p>
+    </footer>
+         
+</body>
+</html>

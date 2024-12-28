@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styleurun.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-links">
+                <a href="#" class="nav-link" onclick="toggleCategoryMenu(event)">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="main.html" class="nav-link">Main</a>
+            </div>
+            <h1>Rare Beauty</h1>
+            <div class="right-links">
+                <a href="login.html" class="nav-link" id="username">Account</a>
+            </div>
+        </nav>
+    </header>
+
+    <script src="scriptshop.js"></script>
+    <link rel="stylesheet" href="styleshopcategory.css">
+    <div id="categoryMenu" class="category-menu">
+        <div class="nav-category" onclick="loadCategory('new')">
+            <img src="Selena\1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
+            <h2>New</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('bestsellers')">
+            <img src="Selena\dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
+            <h2>Bestsellers</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('face')">
+            <img src="Selena\d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
+            <h2>Face</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('eye')">
+            <img src="Selena\0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
+            <h2>Eye</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('body')">
+            <img src="Selena\9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
+            <h2>Body</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('lip')">
+            <img src="Selena\295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
+            <h2>Lip</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('set')">
+            <img src="Selena\c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
+            <h2>Sets</h2>
+        </div>
+    </div>
+    
+    <div class="carousel-container">
+        <div class="carousel" id="product-carousel">
+
+            <!-- Carousel den alınan resimler burada listelencek -->
+        </div>
+        <div class="carousel-controls">
+            <span class="prev" onclick="prevSlide()">❮</span>
+            <span class="next" onclick="nextSlide()">❯</span>
+        </div>
+    </div>
+
+    <div class="product-info">
+        <h2 id="product-name">Product Name</h2>
+        <p>No: <span id="shade-name">Shade Name</span></p>
+        <p class="description" id="product-description">Product description will go here.</p>
+            
+        <div class="color-options" id="color-options">
+            <!-- Color options will be loaded here -->
+            </div>
+
+            <button id="add-to-bag-button" onclick="addToBag()">Add to Bag - <span id="product-price"></span></button>
+            <button onclick="goToCart()">Go to Cart</button> 
+        </div>
+    </div>
+
+    <h3>You May Also Like</h3>
+    <div class="recommended-products">
+        <div class="carousel" id="recommendations-carousel">
+            <!-- Recommended products will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        let selectedProduct = {};
+        
+        // Load product details from JSON
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+                if (!selectedProduct) return;
+
+                document.getElementById('product-name').innerText = selectedProduct.name;
+                document.getElementById('shade-name').innerText = selectedProduct.shade || 'N/A';
+                document.getElementById('product-description').innerText = selectedProduct.description;
+                document.getElementById('product-price').innerText = selectedProduct.price;
+
+                // Load product images into carousel
+                const carousel = document.getElementById('product-carousel');
+                selectedProduct.images.forEach(image => {
+                    const img = document.createElement('img');
+                    img.src = image;
+                    img.alt = selectedProduct.name;
+                    img.classList.add('carousel-image');
+                    carousel.appendChild(img);
+                    
+                });
+                updateCarousel();
+                
+                // Load color options
+                const colorOptions = document.getElementById('color-options');
+
+                if (selectedProduct.colors && Array.isArray(selectedProduct.colors) && selectedProduct.colors.length > 0) {
+                    // Eğer colors alanı doluysa renk seçeneklerini göster
+                    // colors dolu ise, color-options görünür yap
+                    colorOptions.classList.add('active');
+                    selectedProduct.colors.forEach(color => {
+                        const colorSpan = document.createElement('span');
+                        colorSpan.classList.add('color');
+                        colorSpan.style.backgroundColor = color.hex;
+                        colorSpan.onclick = () => changeColor(color.image, color.name);
+                        colorOptions.appendChild(colorSpan);
+                    });
+                } else {
+                    // Eğer colors alanı boşsa veya "none" ise renk seçenekleri kısmını gizle
+                    colorOptions.style.display = 'none';
+                }
+
+                // Load random 5 recommended products
+                const recommendations = data.products
+                    .filter(p => p.id !== selectedProduct.id)
+                    .sort(() => 0.5 - Math.random())
+                    .slice(0, 5);
+
+                const recommendationsCarousel = document.getElementById('recommendations-carousel');
+                recommendations.forEach(recommend => {
+                    const recommendDiv = document.createElement('div');
+                    recommendDiv.classList.add('recommendation-card');
+                    recommendDiv.innerHTML = `
+                        <img src="${recommend.image}" alt="${recommend.name}" class="recommend-image">
+                        <p class="recommend-name">${recommend.name}</p>
+                        <button onclick="addToBag('${recommend.name}', '${recommend.price}', '${recommend.image}')">Add to Bag - ${recommend.price}</button>
+                    `;
+                    recommendDiv.querySelector('.recommend-image').addEventListener('click', () => {
+                        localStorage.setItem('selectedProduct', JSON.stringify(recommend));
+                        window.location.href = 'urun2.html';
+                    });
+                    recommendationsCarousel.appendChild(recommendDiv);
+                    });
+
+                updateCarousel(); // Show the first image
+            });
+        
+            
+
+            window.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('product-carousel');
+            const images = carousel.querySelectorAll('.carousel-image');
+
+            // Tüm resimleri dinamik olarak "carousel-image" sınıfı ile ekleyin
+            selectedProduct.images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = selectedProduct.name;
+                img.classList.add('carousel-image');
+                carousel.appendChild(img);
+            });
+
+            updateCarousel();
+
+            // 5 saniyede bir otomatik geçiş yapacak interval
+            //setInterval(nextSlide, 2000);
+        });
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const images = document.querySelectorAll('.carousel-image');
+            images.forEach((img, index) => {
+                img.classList.remove('active', 'previous', 'next');
+                
+                if (index === currentIndex) {
+                    img.classList.add('active');
+                } else if (index === (currentIndex - 1 + images.length) % images.length) {
+                    img.classList.add('previous');
+                } else if (index === (currentIndex + 1) % images.length) {
+                    img.classList.add('next');
+                }
+            });
+        }
+
+        // İleri butonu
+        function nextSlide() {
+            const images = document.querySelectorAll('.carousel-image');
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+        }
+
+        // Geri butonu
+        function prevSlide() {
+            const images = document.querySelectorAll('.carousel-image');
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+
+
+
+
+            
+
+            
+            
+            
+
+            
+
+           
+            
+
+        
+
+        function addToBag() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Fiyatı sayıya dönüştür
+            const parsedPrice = parsePrice(selectedProduct.price);
+            const existingProduct = cart.find(item => item.name === selectedProduct.name);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({
+                    id: selectedProduct.id,
+                    name: selectedProduct.name,
+                    price: parsedPrice, 
+                    image: selectedProduct.image,
+                    quantity: 1
+                });
+                
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${selectedProduct.name} has been added to your cart!`);
+            //loadCart(); //?
+            console.log(selectedProduct);
+
+        }
+        // Fiyatı string'den sayıya dönüştüren yardımcı fonksiyon
+        function parsePrice(priceString) {
+            // "$" işaretini ve boşlukları kaldırarak sayıya dönüştür
+            return parseFloat(priceString.replace('$', '').trim());
+        }
+
+        function goToCart() {
+            window.location.href = 'sepetim.html';
+        }
+
+        function changeColor(image, shade) {
+            const carouselImages = document.getElementById('product-carousel').querySelectorAll('img');
+            carouselImages[0].src = image;
+            document.getElementById('shade-name').innerText = shade;
+        }
+    </script>
+    <script src="scriptlogin.js"></script>
+    <footer>
+        <p>&copy; 2024 Rare Beauty</p>
+    </footer>
+</body>
+</html>

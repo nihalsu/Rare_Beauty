@@ -1,0 +1,69 @@
+/*lazım*/
+
+/* shop kısmı categorysi */
+/* Kategori menüsünü yatay olarak sıralamak için flexbox kullanıyoruz */
+
+.category-menu {
+    display:none;
+    flex-direction:row;
+    gap: 50px;
+    justify-content: space-evenly;      /* Öğeler arasına eşit boşluk bırak */
+    align-items: center;               /* Öğeleri dikeyde ortala */
+    padding: 10px ;    
+    position: relative;               /* Menünün üst ve alt boşluklarını ayarla */
+    background-color: #f0f0f0;         /* Menünün arka plan rengini belirle */
+    overflow-x: auto;      /* Yatay kaydırmayı etkinleştir */
+    overflow-y: hidden;    /* Dikey kaydırmayı gizle */
+    white-space: nowrap;
+    
+}
+.category-menu.active {
+    display: flex;
+}
+
+/* Her bir kategori öğesini biçimlendirme */
+.nav-category {              /* Resimleri ve metinleri ortala */
+    flex: 1;                           /* Her bir öğe eşit genişlikte olsun */
+    max-width:150px;                  /* Her bir öğenin maksimum genişliğini belirle */
+    cursor: pointer;                  /* Fare ile üzerine gelindiğinde imleci değiştir */
+    transition: transform 0.3s ease;   /* Hover efektinde animasyon ekle */
+    
+
+}
+
+/* Resimler için stil */
+.nav-category img {
+    width: 120px;                       /* Resmin genişliğini ayarla */
+    height: 120px;                      /* Resmin yüksekliğini ayarla */
+    object-fit: cover;                 /* Resmin oranını bozmadan alanı doldur */
+    border-radius: 50%;                /* Resimleri yuvarlak hale getir */
+    margin-bottom: 8px;                /* Resim ile başlık arasına boşluk ekle */
+    transition: transform 0.3s;
+}
+
+/* Başlıklar için stil */
+.nav-category h2 {
+    text-align:center;
+    font-size: 14px;                   /* Başlık yazısının boyutunu ayarla */
+    color: #333;                       /* Yazı rengini ayarla */
+    margin: 0;                         /* Başlık çevresindeki varsayılan boşluğu kaldır */
+}
+
+/* Hover efekti ekleyerek kategorilerin üzerine gelindiğinde efekt ver */
+.nav-category:hover {
+    transform: scale(1.1);             /* Öğeyi biraz büyüt */
+    transition: transform 0.3s ease;   /* Animasyon geçiş süresi */
+}
+
+/* Responsive düzen için, mobilde öğeleri alt alta yerleştir */
+@media (max-width: 250px) {
+    .category-menu {
+        flex-direction: column;        /* Ekran küçüldüğünde öğeleri dikey sıralamak */
+        align-items: flex-start;       /* Öğeleri sola hizala */
+    }
+
+    .nav-category {
+        width: 100%;                   /* Her öğe ekranın tamamını kapsasın */
+        margin-bottom: 20px;           /* Öğeler arasına boşluk ekle */
+    }
+}

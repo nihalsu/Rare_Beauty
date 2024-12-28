@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styleabout.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-links">
+                <a href="#" class="nav-link" onclick="toggleCategoryMenu(event)">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="main.html" class="nav-link">Main</a>
+            </div>
+            <h1>Rare Beauty</h1>
+            <div class="right-links">
+                <a href="login.html" class="nav-link" id="username">Account</a>
+            </div>
+        </nav>
+    </header>
+    <script src="scriptshop.js"></script>
+    <link rel="stylesheet" href="styleshopcategory.css">
+    <div id="categoryMenu" class="category-menu">
+        <div class="nav-category" onclick="loadCategory('new')">
+            <img src="Selena\1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
+            <h2>New</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('bestsellers')">
+            <img src="Selena\dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
+            <h2>Bestsellers</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('face')">
+            <img src="Selena\d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
+            <h2>Face</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('eye')">
+            <img src="Selena\0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
+            <h2>Eye</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('body')">
+            <img src="Selena\9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
+            <h2>Body</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('lip')">
+            <img src="Selena\295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
+            <h2>Lip</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('set')">
+            <img src="Selena\c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
+            <h2>Sets</h2>
+        </div>
+    </div>
+    <!-- Hero Bölümü -->
+    <main class="about">
+        <section class="hero scale-in">
+            <img src="Selena\226ba1ef03c81a5d1ea99056b809bf0b.jpg" alt="Rare Beauty Products" class="hero-image">
+            <h1>About Us</h1>
+            <p>Rare Beauty is breaking down unrealistic standards of perfection.
+            This is makeup made to feel good in, without hiding what makes you unique—because Rare Beauty is not about being someone else, but being who you are.</p>
+        </section>
+
+        <!-- Values Bölümü -->
+        <section class="values scale-in">
+            <div class="content">
+                <h1>A Note From</h1>
+                <h2>Our Founder</h2>
+                <p>To redefine beauty standards and empower everyone to feel their most authentic self.</p>
+            </div>
+            <img src="Selena\2c2f87952b30d1e0d146849a8c23b471.jpg" alt="Mission" class="value-image">
+        </section>
+
+        <!-- Founder Bölümü -->
+        <section class="founder scale-in">
+            <div>
+                <h2>Our Mission</h2>
+                <p>We are on a mission to help everyone celebrate their individuality by redefining what beautiful means. We want to promote self-acceptance and give people the tools they need to feel less alone in the world. ​
+                    Our vision is to create a safe, welcoming space in beauty—and beyond—that supports mental well-being across age, gender identity, sexual orientation, race, cultural background, physical or mental ability, and perspective. ​
+                    We believe in the beauty of imperfections.
+                    We nurture a caring, respectful community. ​
+                    We create meaningful connections and relationships. ​
+                    We champion authenticity and positivity.
+                    ​We lead with transparency to build trust.
+                    ​We believe there is power in being vulnerable.</p>
+            </div>
+        </section>
+    </main>
+    <script src="scriptlogin.js"></script>
+    <footer>
+        <p>&copy; 2024 Rare Beauty.</p>
+    </footer>
+         
+</body>
+</html>

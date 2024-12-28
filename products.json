@@ -1,0 +1,217 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Soft Pooch Blush Dog Toy - Faith",
+            "category": "new",
+            "price": "$18",
+            "image":"Selena/id1.1.png",
+            "description": "Product 1 description",
+            "images": ["Selena/id1.1.png","Selena/id1.2.png", "Selena/id1.3.png"],
+            "colors": []
+            
+        },
+        {
+            "id": 2,
+            "name": "Stay Vulnerable Mini Glossy Lip Balm Duo",
+            "category": "new",
+            "price": "$25",
+            "image": "Selena/id2.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id2.1.png", "Selena/id2.2.png","Selena/id2.3.png"],
+            "colors": []
+        },
+        {
+            "id": 3,
+            "name": "Mini Blush & Luminize Trio",
+            "category": "new",
+            "price": "$35",
+            "image": "Selena/id3.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id3.1.png", "Selena/id3.2.png","Selena/İd3.3.png"],
+            "colors": []
+        },
+        {
+            "id": 4,
+            "name": "Selena’s Essential Eye Duo",
+            "category": "new",
+            "price": "$28",
+            "image": "Selena/id4.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id4.1.png","Selena/id4.2.png","Selena/id4.3.png"],
+            "colors": []
+        },
+        {
+            "id": 5,
+            "name": "Find Comfort Weighted Heating Pad",
+            "category": "new",
+            "price": "$20",
+            "image": "Selena/id5.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id5.1.png","Selena/id5.2.png"],
+            "colors": []
+        },
+        {
+            "id": 6,
+            "name": "Find Comfort Scented Candle",
+            "category": "new",
+            "price": "$35",
+            "image": "Selena/id6.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id6.1.png", "Selena/id6.2.png"],
+            "colors": []
+        },
+        {
+            "id": 7,
+            "name": "Find Comfort Mini Lotion & Fragrance Set",
+            "category": "new",
+            "price": "$30",
+            "image": "Selena/id7.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id7.1.png","Selena/id7.2.png"],
+            "colors": []
+        },
+        {
+            "id": 8,
+            "name": "Kind Words Mini Matte Lip Duo",
+            "category": "new",
+            "price": "$30",
+            "image": "Selena/id8.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id8.1.png", "Selena/id8.2.png"],
+            "colors": []
+        },
+        {
+            "id": 9,
+            "name": "Mini Puffy Tote Keychain - Merlot",
+            "category": "new",
+            "price": "$15",
+            "image": "Selena/id9.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id9.png"],
+            "colors": []
+        },
+        {
+            "id": 10,
+            "name": "Soft Pinch Liquid Blush",
+            "category": "bestsellers",
+            "price": "$23",
+            "image": "Selena/id9.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id9.1.png","Selena/id9.2.png"],
+            "colors": []
+        },
+        {
+            "id": 11,
+            "name": "Soft Pinch Tinted Lip Oil",
+            "category": "bestsellers",
+            "price": "$20",
+            "image": "Selena/id11.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id11.1.png","Selena/id11.2.png"],
+            "colors": []
+        },
+        {
+            "id": 12,
+            "name": "Warm Wishes Effortless Bronzer Stick",
+            "category": "bestsellers",
+            "price": "$26",
+            "image": "Selena/id12.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id12.1.png","Selena/id12.2.png"],
+            "colors": []
+        },
+        {
+            "id": 13,
+            "name": "Positive Light Liquid Luminizer",
+            "category": "bestsellers",
+            "price": "$25",
+            "image": "Selena/id13.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/id13.1.png","Selena/id13.2.png","Selena/id13.3.png"],
+            "colors": []
+        },
+        {
+            "id": 14,
+            "name": "Perfect Strokes Universal Volumizing Mascara",
+            "category": "bestsellers",
+            "price": "$20",
+            "image": "Selena/14.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/14.1.png","Selena/14.2.png","Selena/14.3.png"],
+            "colors": []
+        },
+        {
+            "id": 15,
+            "name": "Find Comfort Body & Hair Fragrance Mist",
+            "category": "bestsellers",
+            "price": "$28",
+            "image": "Selena/15.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/15.1.png","Selena/15.2.png"],
+            "colors": []
+        },
+        {
+            "id": 16,
+            "name": "Kind Words Matte Lip Liner",
+            "category": "lip",
+            "price": "$15",
+            "image": "Selena/16.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/16.1.png","Selena/16.2.png","Selena/16.3.png"],
+            "colors": []
+        },
+        {
+            "id": 17,
+            "name": "Kind Words Matte Lipstick",
+            "category": "lip",
+            "price": "$20",
+            "image": "Selena/17.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/17.1.png","Selena/17.2.png"],
+            "colors": []
+        },
+        {
+            "id": 18,
+            "name": "Lip Soufflé Matte Lip Cream",
+            "category": "lip",
+            "price": "$20",
+            "image": "Selena/18.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/18.1.png","Selena/18.2.png"],
+            "colors": []
+        },
+        {
+            "id": 19,
+            "name": "Soft Pinch Tinted Lip Oil",
+            "category": "lip",
+            "price": "$20",
+            "image": "Selena/19.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/19.1.png","Selena/19.2.png"],
+            "colors": []
+        },
+        {
+            "id": 20,
+            "name": "Stay Vulnerable Mini Glossy Lip Balm Duo",
+            "category": "lip",
+            "price": "$25",
+            "image": "Selena/20.1.png",
+            "description": "Product 2 description",
+            "images": ["Selena/20.1.png","Selena/20.2.png"],
+            "colors": []
+        },
+        {
+            "id": 21,
+            "name": "Stay Vulnerable Glossy Lip Balm",
+            "category": "lip",
+            "price": "$20",
+            "image": "Selena/21.1.png",
+            "description": "Like a lip mask in a gloss, this ultra shiny balm cushions lips with soft, nourishing color that’s all slick, no stick. Now in a NEW, limited-edition shade Nearly Petal.",
+            "images": ["Selena/21.1.png","Selena/21.2.png","Selena/21.3.png"],
+            "colors": []
+        }
+        
+        
+    ]
+}

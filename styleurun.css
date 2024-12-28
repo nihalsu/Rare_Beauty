@@ -1,0 +1,253 @@
+/*lazım*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2E6E6;
+    color: #7f6d75;
+    text-align: center;
+  }
+
+
+
+header nav{
+    width: 100%;
+    margin: 0;
+    background-color: #dac9c9;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+
+.nav-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #7f6d75;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: #555;
+}
+
+
+
+
+
+/* Genel stil ve animasyon */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Carousel genişliği */
+    height: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#product-carousel {
+    display: flex;
+    justify-content: center; /* Yatayda ortalamak için */
+    align-items: center;     /* Dikeyde ortalamak için */
+    height: 100vh;           /* Sayfa yüksekliğine göre ortalamak için */
+    overflow: hidden;        /* Taşan içeriği gizler */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: 620px;
+    opacity: 0.5; /* Varsayılan saydamlık */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Resim geçiş animasyonu */
+    transform: scale(0.8); /* Başlangıçta küçük */
+    display: flex;
+    justify-self: center;
+}
+
+.carousel-image.active {
+    opacity: 1; /* Aktif resmin tam görünür olması */
+    transform: scale(1); /* Aktif resmin normal boyutta olması */
+}
+
+/* Sağ ve sol ok işaretleri */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.prev, .next {
+    color: rgb(45, 43, 43);
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 30%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    
+    justify-content:space-between;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(189, 186, 186, 0.6);
+    transform: scale(1.1);
+}
+
+.prev:active, .next:active {
+    background-color: rgba(227, 226, 226, 0.8);
+}
+
+
+
+.product-info{
+    margin-top: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+
+.color-options {
+    display: none; /* Varsayılan olarak gizli */
+}
+
+.color-options.active {
+    display: flex; /* Renk seçenekleri yüklendiğinde görünür yap */
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #dac9c9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #c3a8a8;
+}
+
+
+
+
+
+/*Recommended kısmı*/
+
+.recommended-products {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.recommended-products::-webkit-scrollbar {
+    height: 8px;
+}
+
+.recommended-products::-webkit-scrollbar-thumb {
+    background-color: #dac9c9;
+    border-radius: 4px;
+}
+
+/* Parent container styling */
+#recommendations-carousel {
+    display: flex;
+    gap: 20px; /* Aralığı ayarlamak için */
+    overflow-x: auto; /* Yatay kaydırma için */
+    padding: 50px 15px;
+}
+
+/* Recommendation card styling */
+.recommendation-card {
+    flex: 0 0 350px; /* Kartların aynı genişlikte olmasını sağlar */
+    height: 520px; /* Kartların yüksekliği */
+    background-color: #f9f9f9;
+    border:  solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.recommendation-card:hover {
+    transform: scale(1.05); /* Hafif büyütme */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
+}
+
+/* Image styling */
+.recommendation-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Product name styling */
+.recommendation-card .recommend-name {
+    font-size: 20px;
+    font-family:sans-serif;
+    font-weight:lighter;
+    font-style:oblique;
+    text-align: center;
+    color: #333;
+    margin: 8px 0;
+    line-height: 1.2;
+}
+
+/* Button styling */
+.recommendation-card button {
+    background-color: #dac9c9;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Beauty</title>
+    <link rel="stylesheet" href="stylemain.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-links">
+                <a href="#" class="nav-link" onclick="toggleCategoryMenu(event)">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="main.html" class="nav-link">Main</a>
+            </div>
+            <h1>Rare Beauty</h1>
+            <div class="right-links">
+                <a href="login.html" class="nav-link" id="username">Account</a>
+            </div>
+        </nav>
+    </header>
+    <script src="scriptshop.js"></script>
+    <link rel="stylesheet" href="styleshopcategory.css">
+    <div id="categoryMenu" class="category-menu">
+        <div class="nav-category" onclick="loadCategory('new')">
+            <img src="Selena\1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
+            <h2>New</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('bestsellers')">
+            <img src="Selena\dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
+            <h2>Bestsellers</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('face')">
+            <img src="Selena\d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
+            <h2>Face</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('eye')">
+            <img src="Selena\0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
+            <h2>Eye</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('body')">
+            <img src="Selena\9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
+            <h2>Body</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('lip')">
+            <img src="Selena\295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
+            <h2>Lip</h2>
+        </div>
+        <div class="nav-category" onclick="loadCategory('set')">
+            <img src="Selena\c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
+            <h2>Sets</h2>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero">
+            <h2>What</h2>
+            <h2>make us </h2>
+            <h2>Rare</h2>
+            <p>
+                Together we're building a safe, welcoming space in beauty and beyond. This is makeup made to feel good in, without hiding what makes you unique. And it’s all vegan and cruelty-free.
+            </p>
+            <a href="about.html" class="our-story">Our Story →</a>
+        </section>
+        
+    <section  class="categories">
+        <div class="categories">
+        </div>
+        <div class="category" onclick="loadCategory('new')">
+            <img src="Selena\1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
+            <h3>New</h3>
+        </div>
+        <div class="category" onclick="loadCategory('bestsellers')">
+            <img src="Selena\dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
+            <h3>Bestsellers</h3>
+        </div>
+        <div class="category" onclick="loadCategory('face')">
+            <img src="Selena\d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
+            <h3>Face</h3>
+        </div>
+        <div class="category" onclick="loadCategory('eye')">
+            <img src="Selena\0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
+            <h3>Eye</h3>
+        </div>
+        <div class="category" onclick="loadCategory('body')">
+            <img src="Selena\9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
+            <h3>Body</h3>
+        </div>
+        <div class="category" onclick="loadCategory('lip')">
+            <img src="Selena\295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
+            <h3>Lip</h3>
+        </div>
+        <div class="category" onclick="loadCategory('set')">
+            <img src="Selena\c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
+            <h3>Sets</h3>
+        </div>
+        </section>
+    </section>
+    </main>
+    <script src="scriptmain.js"></script>
+    <script src="scriptlogin.js"></script>
+    <footer>
+        <p>&copy; 2024 Rare Beauty</p>
+    </footer>
+</body>
+</html>
