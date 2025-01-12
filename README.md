@@ -2,7 +2,8 @@
 Rare Beauty is a cosmetics e-commerce website offering category-based product listing, detailed product pages, and a modern user interface. The website has been redesigned with innovative features and dynamic content management
 
 Bu sayfa RareBeuty sayfasından esinlenilerek öğrenmek için yapılmıştır.
-Orijinal site için: [Rare Beauty Orijinal Site](https://www.rarebeauty.com/pages/about)
+Orijinal site için:
+[Rare Beauty Orijinal Site](https://www.rarebeauty.com/pages/about)
 
 ## Proje Dokümanları
 
