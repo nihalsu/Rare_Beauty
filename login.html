@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rare Beauty/Login</title>
-    
+    <link rel="stylesheet" href="stylelogin.css">
 </head>
 <body>
     <header>
@@ -23,36 +23,34 @@
     <script src="scriptshop.js"></script>
     <div id="categoryMenu" class="category-menu">
         <div class="nav-category" onclick="loadCategory('new')">
-            <img src="Selena\1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
+            <img src="Selena/1a9c05cdff7dbda4bf58cafe40725183.jpg" alt="New Category">
             <h2>New</h2>
         </div>
         <div class="nav-category" onclick="loadCategory('bestsellers')">
-            <img src="Selena\dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
+            <img src="Selena/dde9618b5e13d9991d8cb30a7ade451d.jpg" alt="Bestsellers Category">
             <h2>Bestsellers</h2>
         </div>
         <div class="nav-category" onclick="loadCategory('face')">
-            <img src="Selena\d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
+            <img src="Selena/d08e060ace5ae08129042890e0eab122.jpg" alt="Face Category">
             <h2>Face</h2>
         </div>
         <div class="nav-category" onclick="loadCategory('eye')">
-            <img src="Selena\0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
+            <img src="Selena/0e7f21b6d5ab124522037b1b1a5074ac.jpg" alt="Eye Category">
             <h2>Eye</h2>
         </div>
         <div class="nav-category" onclick="loadCategory('body')">
-            <img src="Selena\9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
+            <img src="Selena/9cabd104f03c140797d2f46ceb7b2fc3.jpg" alt="Body Category">
             <h2>Body</h2>
         </div>
         <div class="nav-category" onclick="loadCategory('lip')">
-            <img src="Selena\295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
+            <img src="Selena/295ee84db14b121464ddddae5d582f7e.jpg" alt="Lip Category">
             <h2>Lip</h2>
         </div>
         <div class="nav-category" onclick="loadCategory('set')">
-            <img src="Selena\c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
+            <img src="Selena/c7ec1888460018d3e6e3fe45c2196133.jpg" alt="Set Category">
             <h2>Sets</h2>
         </div>
     </div>
-    
-
     <main>
         <div class="container">
             <!-- Sol bölüm: Görsel -->
@@ -62,10 +60,10 @@
             <!-- Sağ bölüm: Giriş formu -->
             <div class="right-section">
                 <h2>Login</h2>
-                <!-- Giriş Formu -->
-                <form id="loginForm" onsubmit="login(event)">
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
+                <!-- PHP ile Giriş Formu -->
+                <form action="php/login.php" method="POST">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
                     <button type="submit">SIGN IN</button>
                     <!-- Kayıt Olma Bağlantısı -->
                     <div class="links">
@@ -78,47 +76,5 @@
     <footer>
         <p>&copy; 2024 Rare Beauty</p>
     </footer>
-    
-    <script>
-        // Kullanıcı bilgilerini JSON'dan almak için yardımcı fonksiyon
-        async function getUsers() {
-            const response = await fetch('users.json'); // JSON dosyasını al
-            return await response.json(); // JSON'u objeye dönüştür
-        }
-    
-        // Kullanıcı giriş işlemi
-        async function login(event) {
-            event.preventDefault(); // Formun varsayılan davranışını engelle
-    
-            const email = event.target[0].value; // Formdaki e-posta girişini al
-            const password = event.target[1].value; // Formdaki şifre girişini al
-    
-            const users = await getUsers(); // JSON'dan kullanıcıları al
-            const user = users.find(user => user.email === email && user.password === password); // Kullanıcı doğrulama
-    
-            if (user) {
-                alert('Giriş başarılı!');
-                sessionStorage.setItem('loggedInUser', JSON.stringify(user)); // Giriş yapan kullanıcıyı sessionStorage'da sakla
-                window.location.href = 'sepetim.html'; // Sepetim sayfasına yönlendirme
-            } else {
-                alert('Hatalı e-posta veya şifre.'); // Hatalı giriş uyarısı
-            }
-        }
-    
-        // Sayfa yüklendiğinde giriş durumunu kontrol et ve kullanıcı adını göster
-        function checkLoginStatus() {
-            const loggedInUser = sessionStorage.getItem('loggedInUser'); // Oturumdaki kullanıcıyı kontrol et
-            if (loggedInUser) {
-                const user = JSON.parse(loggedInUser); // Oturumdaki kullanıcıyı çöz
-                const navLink = document.querySelector(".right-links .nav-link"); // Sağ üst köşedeki linki al
-                navLink.textContent = user.username; // Kullanıcı adını göster
-                navLink.href = "sepetim.html"; // "Sepetim" sayfasına yönlendirme
-            }
-        }
-    
-        // "DOMContentLoaded" etkinliğinde giriş durumunu kontrol et
-        document.addEventListener("DOMContentLoaded", checkLoginStatus);
-    </script>
-    <link rel="stylesheet" href="stylelogin.css">
 </body>
 </html>
